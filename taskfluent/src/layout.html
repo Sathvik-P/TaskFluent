@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- FAVICON -->
+	<link rel="icon" type="image/gif" sizes="12x12" href="img/LSI_favicon.png">
+
+	<!--PAGE TITLE-->
+	<title>TaskFluent</title>
+
+	<!-- BOOTSTRAP CSS CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- AOS ANIMATE LIBRARY CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+	<meta name="facebook-domain-verification" content="edeip2nnuhvb4mi1uzarbqzx4l48dm"/>
+
+	<link rel="stylesheet" href="../static/main.css">
+	<link rel="stylesheet" href="../static/login.css">
+
+	<!-- GOOGLE ICONS -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+	<!-- SVG SPRITE SHEET -->
+	<link rel="image/svg+xml" href="img/svg-symbols.svg">
+
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+    {% block body %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- BOOTSTRAP JS CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<!-- AOS ANIMATE JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+	<!-- INERTIA SCRIPT -->
+	<script>
+
+		//config vars
+		const lagAmount = 200;
+		const maxSpeed = 1000;
+		const frameRate = 20;
+		const moveDirection = 1;
+		//code
+		let scrollTop = 0;
+		let pinTop1 = 0;
+		let pinTop2 = 0;
+		let pinTop3 = 0;
+		let lastTime;
+		const updatePinPosition = (time) => {
+			if (!lastTime)
+				lastTime = time;
+			let delta = time - lastTime;
+			if (delta >= frameRate){
+
+				scrollTop = $(window).scrollTop();
+
+				var move1 = (scrollTop - pinTop1) * delta / (lagAmount + delta);
+				var direction1 = move1 === 0 ? 0 : move1 / Math.abs(move1);
+				pinTop1 = pinTop1 + Math.min( Math.abs(move1), maxSpeed ) * direction1;
+				$('.inertia-lvl-1').css('transform', `translateY(${move1*moveDirection}px`)
+
+				var move2 = (scrollTop - pinTop2) * delta / (lagAmount*2 + delta);
+				var direction2 = move2 === 0 ? 0 : move2 / Math.abs(move2);
+				pinTop2 = pinTop2 + Math.min( Math.abs(move2), maxSpeed ) * direction2;
+				$('.inertia-lvl-2').css('transform', `translateY(${move2*2*moveDirection}px`)
+
+				var move3 = (scrollTop - pinTop3) * delta / (lagAmount*3 + delta);
+				var direction3 = move3 === 0 ? 0 : move3 / Math.abs(move3);
+				pinTop3 = pinTop3 + Math.min( Math.abs(move3), maxSpeed ) * direction3;
+				$('.inertia-lvl-3').css('transform', `translateY(${move3*4*moveDirection}px`)
+
+				lastTime = time;
+			}
+			requestAnimationFrame(updatePinPosition);
+		}
+		requestAnimationFrame(updatePinPosition);
+	</script>
+
+<!-- PARALLAX SCRIPT -->
+<script>
+	var elements = document.querySelectorAll(".index-card-image");
+	const updateParallax = (time) => {
+		let height = window.innerHeight;
+		elements.forEach(function(element) {
+			let percent = (element.getBoundingClientRect().y + element.offsetHeight / 2) / (height + element.offsetHeight);
+			// console.log((element.offsetHeight * percent));
+			element.style.transform = 'translateY(' + -(element.offsetHeight * percent) + 'px)';
+		});
+		requestAnimationFrame(updateParallax);
+	}
+	requestAnimationFrame(updateParallax);
+
+</script>
+
+    {% endblock %}
+</body>
+
+</html>

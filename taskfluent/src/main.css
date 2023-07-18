@@ -1,0 +1,986 @@
+/*
+	                 main.css
+	-- THE MAIN CSS FILE SHARED ACROSS ALL PAGES --
+
+	Any CSS data used in multiple significant places should be located here;
+	all page-specific CSS should live in its respective CSS file.
+
+	This CSS file has been extracted from the old styles2.css.
+	Remaining classes are only the essentials and basics.
+*/
+
+
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	background-color: #000000;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+	  /* background: linear-gradient(45deg, #00bfff 0%, #00bfff 20%, transparent 20%, transparent 80%, #00bfff 80%, #00bfff 100%);
+	  background-size: 200% 200%;
+	  background-position: bottom left;
+	  transform: rotate(-45deg); */
+}
+
+@keyframes wave {
+	0% {
+	  background-position-x: 0%;
+	}
+	100% {
+	  background-position-x: 100%;
+	}
+  }
+
+.display-1,
+.display-2,
+.display-4,
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+/*
+*
+****    FONTS   ****
+*
+*/
+@font-face {
+	font-family: museoBold;
+	src: url("fonts/MuseoSans-700.woff2") format("woff2"),
+		url('fonts/MuseoSans-700.woff') format('woff');
+	font-display: swap;
+}
+
+.museo-bold {
+	font-family: museoBold, sans-serif;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+}
+
+@font-face {
+	font-family: museo;
+	src: url("fonts/MuseoSans-300.woff2") format("woff2"),
+		url('fonts/MuseoSans-300.woff') format('woff');
+	font-display: swap;
+}
+
+.museo {
+	font-family: museo, sans-serif;
+	letter-spacing: 0.03em;
+}
+
+@font-face {
+	font-family: museoLight;
+	src: url("fonts/MuseoSans-100.woff2") format("woff2"),
+		url('fonts/MuseoSans-100.woff') format('woff');
+	font-display: swap;
+}
+
+.museo-light {
+	font-family: museoLight, sans-serif;
+	letter-spacing: 0.03em;
+}
+
+@font-face {
+	font-family: klavika;
+	src: url("fonts/Klavika-Regular.woff2") format("woff2"),
+		url('fonts/Klavika-Regular.woff') format('woff');
+	font-display: swap;
+}
+
+.klavika {
+	font-family: klavika, sans-serif !important;
+	letter-spacing: -0.01em !important;
+	font-size: 1.5em;
+}
+
+.klavika-adult {
+	font-family: klavika, sans-serif !important;
+	letter-spacing: .3em !important;
+	text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+	.klavika {
+		font-size: 1.2em;
+	}
+}
+
+@font-face {
+	font-family: klavikaBold;
+	src: url("fonts/Klavika-Bold.woff2") format("woff2"),
+		url("fonts/Klavika-Bold.woff") format("woff");
+	font-display: swap;
+}
+
+.klavika-bold {
+	font-family: klavikaBold, sans-serif;
+}
+
+.klavika-bold-adult {
+	font-family: klavikaBold, sans-serif;
+	letter-spacing: .15em !important;
+	text-transform: uppercase;
+}
+/* MATERIAL ICONS */
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Material Icons'),
+		local('MaterialIcons-Regular'),
+		url('fonts/MaterialIcons-Regular.ttf') format('truetype')
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	/* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	vertical-align: middle !important;
+
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+}
+
+.material-icons.md-36 {
+	font-size: 36px;
+}
+
+.material-icons.md-48 {
+	font-size: 48px;
+}
+
+.material-icons.md-100 {
+	font-size: 100px;
+}
+
+
+/*
+*
+****    Colors   ****
+*
+*/
+.navy {
+	color: #024273;
+}
+
+.light-blue {
+	color: #4ac8f6;
+}
+
+.blue {
+	color: #2a94d4;
+}
+
+.blue-dark {
+	color: #1472ac;
+}
+
+.black {
+	color: #000000;
+}
+
+.white {
+	color: white;
+}
+.grey {
+	color: rgb(220, 220, 220);
+}
+
+.grey-light {
+	color: #989898;
+}
+
+.grey-medium {
+	color: #808080;
+}
+
+.grey-dark {
+	color: #707070;
+}
+
+.gold {
+	color: #9c8332;
+}
+/*  Backgrounds */
+.bg-light {
+	background-color: #eceff1 !important;
+}
+.bg-clear {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.bg-black {
+	background-color: #000000;
+}
+
+.bg-light-blue {
+	background-color: #06a7e2;
+}
+
+.bg-clear {
+	background-color:rgba(0, 0, 0, 0)
+}
+
+.bg-blue {
+	background-color: #2a94d4;
+}
+
+.bg-blue-dark {
+	background-color: #2086c5;
+}
+
+.bg-blue-darker {
+	background-color: #1472ac;
+}
+
+
+
+/* Limbitless Colors, taken from the "[2020] Style Guidelines.pdf" on the Drive */
+.primary-blue-1 {
+	color: #4AC8F6;
+}
+.primary-blue-2 {
+	color: #06A7E2;
+}
+.primary-blue-3 {
+	color: #2A94D4;
+}
+.primary-blue-4 {
+	color: #024273;
+}
+
+.secondary-orange {
+	color: #FCA82A;
+}
+.secondary-green {
+	color: #39AC50;
+}
+.secondary-red {
+	color: #E85454;
+}
+.secondary-purple {
+	color: #7946AD;
+}
+
+.neutral-1 {
+	color: #FFFFFF;
+}
+.neutral-2 {
+	color: #FAFAFA;
+}
+.neutral-3 {
+	color: #EEEEEE;
+}
+.neutral-4 {
+	color: #BBBBBB;
+}
+.neutral-5 {
+	color: #989898;
+}
+.neutral-6 {
+	color: #707070;
+}
+.neutral-7 {
+	color: #414141;
+}
+.neutral-8 {
+	color: #000000;
+}
+
+
+/*
+*Section formatting
+*/
+/*
+*reset bootstrap margin on row to prevent extra white border/horizontal scrolling
+*/
+
+/*
+*Button
+*/
+
+.gradient-btn {
+	background: linear-gradient(to right, #b09143, #523b04);
+	background-size: 110%;
+	background-position-x: -5px;
+	color: black;
+	border: solid 1.5px #FFFFFF00;
+	padding: 11.3px 22.5px;
+	border-radius: 50px;
+	font-size: 1.05em;
+	margin: 0;
+	z-index: 7;
+	transition: 0.3s;
+}
+
+.gradient-btn:hover {
+	background: linear-gradient(to right, #D7F8FF, #FFF);
+	background-size: 110%;
+	background-position-x: -5px;
+	color: #2A94D4;
+	border: solid 1.5px #BCEDFF;
+	text-decoration: none;
+	/* transform: scale(1.05); */
+}
+
+
+.link-btn {
+	background-color: #024273;
+	color: white;
+	padding: 17px 40px;
+	border-radius: 50px;
+	font-size: 1.1em;
+	margin: 0;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+	z-index: 7;
+}
+
+.contact-btn {
+	background-color: #024273;
+	color: white;
+	padding: 17px 40px;
+	border-radius: 50px;
+	font-size: 1.1em;
+	margin: 2%;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+	z-index: 7;
+}
+
+.contact-btn-sm {
+	background-color: #024273;
+	color: white;
+	padding: 8px;
+	font-size: 0.9em;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 25px;
+}
+
+.link-btn:hover,
+.contact-btn:hover,
+.contact-btn-sm:hover {
+	background-color: #032946;
+	color: white;
+}
+
+.link-btn-outline {
+	background-color: rgba(0, 0, 0, 0);
+	border: solid 1px white;
+	color: white;
+	font-size: 1.1em;
+	padding: 17px 40px;
+	margin: 0;
+	border-radius: 50px;
+}
+
+.link-btn-outline:hover {
+	border: solid 1px rgba(255, 255, 255, 0.3);
+	color: white;
+}
+
+.badge {
+	padding: .5em .75em .6em .75em !important;
+	margin: .3em !important;
+}
+
+.link-btn-context {
+	font-family: klavika;
+	color: #2a94d4;
+	font-size: 1.3em;
+	letter-spacing: -0.4pt;
+}
+
+.link-btn-context-white {
+	font-family: klavika;
+	color: white;
+	font-size: 1.3em;
+	letter-spacing: -0.4pt;
+}
+
+.link-btn-context>span.material-icons {
+	font-size: 24pt !important;
+}
+
+.cta-button {
+	font-family: klavika, sans-serif;
+	font-size: 1.2rem;
+	color: #2A94D4;
+	transition: 0.2s;
+}
+
+/*
+.cta-button::after {
+	display:inline-block;
+	font-family: 'Material Icons';
+	content: "face";  /*THIS IS TEMPORARY UNTIL I CAN FIGURE OUT HOW TO GET THE ARROW TO WORK
+	width: 20px;
+	height: 20px;
+	transform:translateY(2.5px);
+}
+*/
+
+.cta-button:hover {
+	color: #4ba4dd;
+	text-underline-offset: 10000px;
+	border-bottom: 2px solid #4ba4dd;
+}
+
+.cta-button:hover::after {
+	border-bottom: 0px solid #4ba4dd;
+}
+
+@media only screen and (max-width: 900px) {
+
+	.gradient-btn,
+	.link-btn,
+	.contact-btn,
+	.link-btn-outline {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+
+	.gradient-btn,
+	.link-btn,
+	.contact-btn,
+	.link-btn-outline {
+		margin: 2% 0 !important;
+		width: 100% !important;
+		font-size: 0.9em;
+		/* remove unecessary margin on buttons on narrow mobile screens, center them */
+	}
+}
+/*
+main content padding
+*/
+.padding {
+	padding-top: 100px;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 50px;
+}
+
+.section-padding {
+	padding-top: 100px;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 50px;
+}
+
+.padding-narrow {
+	padding-top: 100px;
+	padding-left: 3%;
+	padding-right: 3%;
+	padding-bottom: 50px;
+}
+
+.padding1 {
+	padding-top: 3%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+}
+
+.padding1-2 {
+	padding-top: 6%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 6%;
+}
+
+.padding1-3 {
+	padding-top: 6%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 10%;
+}
+
+.padding1-4 {
+	padding-top: 12%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 12%;
+}
+
+.padding1-5 {
+	padding-top: 12%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 0;
+}
+
+.padding1-6 {
+	padding-top: 8%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+}
+
+.padding1-7 {
+	padding-top: 8%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 12%;
+}
+
+.padding-tall {
+	padding-top: 8%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 28%;
+}
+
+.padding2 {
+	padding-top: 50px;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 10px;
+}
+
+.paddingcontact {
+	padding: 5% 3%;
+}
+
+.paddingT {
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+.paddingT2 {
+	padding-top: 3%;
+	padding-bottom: 8%;
+}
+
+.paddingT3 {
+	padding-top: 5%;
+	padding-bottom: 3%;
+}
+
+.paddingF {
+	padding: 5%;
+}
+
+.paddingSponsorGold {
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+.paddingF2 {
+	padding: 3%;
+}
+
+.paddingVertical {
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.paddingVerticalTall {
+	padding-top: 8%;
+	padding-bottom: 8%;
+}
+
+.paddingTopTall {
+	padding-top: 12%;
+	padding-bottom: 2%;
+}
+
+.paddingBottom {
+	padding-bottom: 4%;
+	padding-top: 0%;
+}
+
+.paddingBottom2 {
+	padding-bottom: 2%;
+	padding-top: 0%;
+}
+
+.paddingBlog {
+	padding-top: 8%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 7%;
+}
+
+.paddingBlogPost {
+	padding-top: 3%;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-bottom: 3%;
+}
+
+.paddingCovid {
+	padding-top: 12%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+}
+
+@media only screen and (max-width: 1300px) {
+	.paddingBlogPost {
+		padding-top: 3%;
+		padding-left: 10%;
+		padding-right: 10%;
+		padding-bottom: 3%;
+	}
+}
+
+.paddingBlogTemplate {
+	padding-top: 3%;
+	padding-left: 8%;
+	padding-right: 8%;
+	padding-bottom: 3%;
+}
+
+.paddingLeft {
+	padding-left: 4%;
+	padding-right: 15%;
+}
+
+.paddingRight {
+	padding-left: 5%;
+	padding-right: 15%;
+}
+
+.paddingSnapRight {
+	padding-right: 0%;
+}
+
+.paddingSnapLeft {
+	padding-left: 0%;
+}
+
+.centerPaddingVertical2 {
+	padding-top: 15%;
+	padding-bottom: 5%;
+}
+
+.centerPaddingVertical1 {
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.centerPaddingVertical0 {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.centerPaddingHorizontal2 {
+	padding-left: 10%;
+	padding-left: 10%;
+}
+
+.centerPaddingHorizontal1 {
+	padding-left: 5%;
+	padding-left: 5%;
+}
+
+.my-7 {
+	margin-top: 3.5em !important;
+	margin-bottom: 3.5em !important;
+}
+
+.ç {
+	margin-left: .5em !important;
+}
+
+.ml-2 {
+	margin-left: 1.0em !important;
+}
+
+.ml-3 {
+	margin-left: 1.5em !important;
+}
+
+.ml-4 {
+	margin-left: 2.0em !important;
+}
+
+.ml-5 {
+	margin-left: 2.5em !important;
+}
+
+.mr-1 {
+	margin-right: .8em !important;
+}
+
+.pl-1 {
+	padding-left: .5em !important;
+}
+
+.pl-2 {
+	padding-left: 1.0em !important;
+}
+
+.pl-3 {
+	padding-left: 1.5em !important;
+}
+
+.pl-4 {
+	padding-left: 2.0em !important;
+}
+
+.pl-5 {
+	padding-left: 2.5em !important;
+}
+
+.pl-lg {
+	padding-left: 5.0em !important;
+}
+
+.pr-1 {
+	padding-right: .5em !important;
+}
+
+.pr-5 {
+	padding-right: 2.5em !important;
+}
+
+.pr-lg {
+	padding-right: 5.0em !important;
+}
+
+@media only screen and (max-width: 1000px) {
+	.padding-mobile-covid {
+		padding-top: 10% !important;
+		padding-bottom: 72% !important;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+
+	/* adjust these padding classes on mobile */
+	.paddingcontact {
+		padding: 3% 0 !important;
+	}
+
+	/* increase padding height so masked images come after all text */
+	.padding-mobile-1 {
+		padding-top: 10% !important;
+		padding-bottom: 114% !important;
+	}
+
+	.padding-mobile-1-1 {
+		padding-top: 10% !important;
+		padding-bottom: 140% !important;
+	}
+
+	.padding-mobile-2 {
+		padding-top: 10% !important;
+		padding-bottom: 72% !important;
+	}
+
+	.padding-mobile-2-2 {
+		padding-top: 10% !important;
+		padding-bottom: 88% !important;
+	}
+
+	.padding-mobile-2-3 {
+		padding-top: 20% !important;
+		padding-bottom: 99% !important;
+	}
+
+	.padding-mobile-2-4 {
+		padding-top: 10% !important;
+		padding-bottom: 85% !important;
+	}
+
+	.padding-mobile-3 {
+		padding-top: 10% !important;
+		padding-bottom: 52% !important;
+	}
+
+	.padding-mobile-4 {
+		padding-top: 10% !important;
+		padding-bottom: 40% !important;
+	}
+
+	.padding-mobile-6 {
+		padding-top: 10% !important;
+		padding-bottom: 56% !important;
+	}
+
+	.padding-mobile-7 {
+		padding-top: 0% !important;
+		padding-bottom: 25% !important;
+	}
+
+	.padding {
+		padding-top: 30px;
+		padding-left: 2%;
+		padding-right: 2%;
+		padding-bottom: 30px;
+	}
+
+	.padding-narrow {
+		padding-top: 30px;
+		padding-left: 2%;
+		padding-right: 2%;
+		padding-bottom: 30px;
+	}
+
+	.paddingVertical {
+		padding-top: 10%;
+		padding-bottom: 10%;
+	}
+
+	.paddingVerticalTall {
+		padding-top: 12%;
+		padding-bottom: 12%;
+	}
+
+	.padding-mobile-top {
+		/* add padding to top of page when title is too close to or under nav on mobile */
+		padding-top: 23% !important;
+	}
+
+	.remove-padding {
+		/* remove unecessary padding that crowds up content on mobile */
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.remove-margin {
+		/* remove unecessary padding that crowds up content on mobile */
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	@media only screen and (max-width: 800px) {
+		h1#title {
+			/*adjust title text size for mobile blogs */
+			font-size: 2.3em !important;
+		}
+	}
+}
+
+@media only screen and (max-width: 990px) {
+	.padding-mobile-car {
+		/* add padding to top of page on mobile carousel */
+		padding-top: 80px;
+	}
+}
+*
+*Scroll bar
+*/
+::-webkit-scrollbar {
+	width: 6px;
+
+}
+
+::-webkit-scrollbar-track {
+	background: #888888;
+	padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #414141;
+
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #989898;
+}
+
+@media only screen and (max-width: 1600px) {
+
+	/* mobile font resizing */
+	.display-4 {
+		font-size: 2.8em;
+	}
+
+	.display-2 {
+		font-size: 3.8em;
+	}
+
+	h1 {
+		font-size: 1.9em;
+	}
+
+	h4 {
+		font-size: 1.3em;
+	}
+}
+
+@media only screen and (max-width: 800px) and (min-width: 700px) {
+	h4 {
+		font-size: .8em;
+		margin-bottom: 5%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+
+	/* mobile font resizing */
+	.display-4 {
+		font-size: 1.9em;
+		margin-bottom: 10%;
+	}
+
+	.display-2 {
+		font-size: 3em;
+	}
+
+	h1 {
+		font-size: 1.3em;
+	}
+
+	h4 {
+		font-size: 1.1em;
+		margin-bottom: 5%;
+	}
+
+	h5 {
+		font-size: 1.2em;
+	}
+
+	p,
+	.blockquote {
+		font-size: 0.9em;
+	}
+
+	.display-1 {
+		font-size: 4em;
+	}
+
+	.txt404 {
+		font-size: 9em;
+	}
+}
+
+.btn-gradient {
+	background-image: linear-gradient(to right, #167EC1 , #1AC0E5)!important;
+	color:#ffffff!important;
+	font-size: 1.05em;
+	margin: 0;
+	z-index: 7;
+	transition: 0.3s;
+  }
